@@ -2,40 +2,37 @@
 	"pages": [
 	    {
             "path" : "pages/home/home",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "快乐购物",
-                "enablePullDownRefresh": false
-            }
-            
+            "style" : {}
         }
         ,{
             "path" : "pages/cate/cate",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "商品挑选",
-                "enablePullDownRefresh": true
-            }
-            
+            "style" : {}   
         }
         ,{
             "path" : "pages/cart/cart",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "购物车",
-                "enablePullDownRefresh": false
-            }
-            
+            "style" : {}
         }
         ,{
             "path" : "pages/my/my",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "个人信息",
-                "enablePullDownRefresh": false
-            }
-            
+            "style" : {}
         }
+    ],
+  "subPackages": [
+      {
+        "root":"subpkg",
+        "pages":[
+          {
+              "path" : "goods_detail/goods_detail",
+              "style" : {}
+              
+          }
+          ,{
+              "path" : "goods_list/goods_list",
+              "style" : {}
+              
+          }
+        ]
+      }
     ],
 	"tabBar": {
     "color": "#000",

@@ -28,8 +28,16 @@
           }
           ,{
               "path" : "goods_list/goods_list",
-              "style" : {}
+              "style" : {
+                "onReachBottomDistance": 150,
+                "enablePullDownRefresh": true,
+                "backgroundColor": "#f8f8f8"
+              }
               
+          }
+          ,{
+              "path" : "search/search",
+              "style" : {}
           }
         ]
       }
@@ -63,7 +71,7 @@
 	},
   "globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "购物车",
+		"navigationBarTitleText": "百日购",
 		"navigationBarBackgroundColor": "#F4C8D8",
 		"backgroundColor": "#efefef"
 	},

@@ -1,8 +1,8 @@
 <template>
   <view>
-    <!-- 搜索框 -->
+    <!-- 自定义搜索框组件 -->
     <view class="search-box">
-      <input type="text" placeholder="搜索" class="search">
+      <my-search @click='gotoSearch'></my-search>
     </view>
     <!-- 轮播图 -->
     <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
@@ -59,6 +59,11 @@
       this.getFloorList()
     },
     methods: {
+      gotoSearch(){
+        uni.navigateTo({
+          url:'/subpkg/search/search'
+        })
+      },
       // 获取轮播图数据的方法
       async getSwiperList(){
         // 发起请求
@@ -100,23 +105,11 @@
 </script>
 
 <style lang="scss">
-  $pink: #F4C8D8;
-  $white: #fff;
   // 搜索框
   .search-box{
-    padding: 10rpx 20rpx;
-    background: $pink;
-    .search{
-      padding: 10rpx;
-      background-color: $white;
-      border-radius: 30rpx;
-      text-align: center;
-      font-size: 28rpx;
-      &::placeholder{
-        // padding: 20rpx;
-        font-size: 32rpx;
-      }
-    }
+    position: sticky;
+    top: 0%;
+    z-index: 999;
   }
   // 轮播图
   swiper{

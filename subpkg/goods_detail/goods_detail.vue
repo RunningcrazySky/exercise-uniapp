@@ -1,6 +1,6 @@
 <template>
   <view>
-    商品详情
+    goods_detail
   </view>
 </template>
 

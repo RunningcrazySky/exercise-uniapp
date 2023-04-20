@@ -1,9 +1,7 @@
 <template>
   <view>
-    <!-- 搜索框 -->
-    <view class="search-box">
-      <input type="text" placeholder="搜索" class="search">
-    </view>
+    <!-- 自定义搜索框组件 -->
+    <my-search @click='gotoSearch'></my-search>
     <!-- 滚动区域 -->
     <view class="scroll-view-container">
       <!-- 左侧滚动视图区域 -->
@@ -48,10 +46,15 @@
       // 当前系统信息
       const sysInfo = uni.getSystemInfoSync()
       // 窗口可用高度
-      this.wh = sysInfo.windowHeight     
+      this.wh = sysInfo.windowHeight - 50
       this.getCateList()
     },
     methods: {
+      gotoSearch(){
+        uni.navigateTo({
+          url:'/subpkg/search/search'
+        })
+      },
       async getCateList(){
         const {data: res} = await uni.$http.get('/api/public/v1/categories')
         if(res.meta.status !== 200) return uni.$show
@@ -73,24 +76,6 @@
 </script>
 
 <style lang="scss">
-  $pink: #F4C8D8;
-  $white: #fff;
-  // 搜索框
-  .search-box{
-    padding: 10rpx 20rpx;
-    background: $pink;
-    .search{
-      padding: 10rpx;
-      background-color: $white;
-      border-radius: 30rpx;
-      text-align: center;
-      font-size: 28rpx;
-      &::placeholder{
-        // padding: 20rpx;
-        font-size: 32rpx;
-      }
-    }
-  }
   // 滚动框
   .scroll-view-container{
     display: flex;
